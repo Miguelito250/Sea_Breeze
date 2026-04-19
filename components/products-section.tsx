@@ -75,7 +75,7 @@ export function ProductsSection({ onAddToCart }: ProductsSectionProps) {
             Colección
           </span>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-light mb-6">
-            Rituales de <span className="italic text-gold-gradient">belleza</span>
+            Sea <span className="italic text-gold-gradient">Breeze</span>
           </h2>
           <p className="text-muted-foreground max-w-xl mx-auto text-lg leading-relaxed">
             Cada producto es una experiencia sensorial única, creada con los ingredientes 
