@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useRef, useState } from "react"
-import { Leaf, Droplets, Recycle, Award } from "lucide-react"
+import { Leaf, Droplets, Recycle, Award, Clock, Sparkles } from "lucide-react"
 import { cn } from "@/lib/utils"
 
 const benefits = [
@@ -13,25 +13,25 @@ const benefits = [
     statLabel: "Químicos",
   },
   {
-    icon: Droplets,
+    icon: Sparkles,
     title: "Vitaminas C, y E",
     description: "La vitamina C es potente antioxidante que ilumina la piel, estimula la producción de colágeno y ayuda a reducir manchas, dejando un rostro más firme y radiante. Y la E antioxidante que hidrata profundamente, protege contra los daños ambientales y ayuda a mantener la piel suave, nutrida y saludable.",
     stat: "100%",
     statLabel: "Pureza",
   },
   {
-    icon: Recycle,
+    icon: Clock,
     title: "Duración",
     description: "De olor y no deja una sensacion aceitosa, se absorbe rápidamente y deja la piel suave e hidratada por horas.",
-    stat: "Zero",
-    statLabel: "Residuos",
+    stat: "Hasta 24h",
+    statLabel: "De hidratación",
   },
   {
-    icon: Award,
+    icon: Droplets,
     title: "Hidratación profunda",
     description: "El aceite de coco es un hidratante natural que penetra profundamente en la piel, proporcionando una hidratación duradera y ayudando a restaurar la barrera cutánea para una piel suave y flexible.",
-    stat: "100%",
-    statLabel: "Vegano",
+    stat: "Nutrición",
+    statLabel: "Profunda",
   },
 ]
 
