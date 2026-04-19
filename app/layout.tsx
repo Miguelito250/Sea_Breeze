@@ -17,6 +17,11 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: 'Sea Breeze | Cosmética Natural Premium',
   description: 'Descubre el lujo natural del trópico. Productos de belleza artesanales elaborados con aceite de coco virgen.',
+  icons: {
+    icon: '/logo_sea.webp',
+    shortcut: '/logo_sea.webp',
+    apple: '/logo_sea.webp',
+  },
 }
 
 export default function RootLayout({
