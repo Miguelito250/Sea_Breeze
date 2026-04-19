@@ -15,7 +15,7 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: 'Coco Luxe | Cosmética Natural Premium',
+  title: 'Sea Breeze | Cosmética Natural Premium',
   description: 'Descubre el lujo natural del trópico. Productos de belleza artesanales elaborados con aceite de coco virgen.',
 }
 

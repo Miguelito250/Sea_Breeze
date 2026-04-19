@@ -86,13 +86,13 @@ export function AboutSection() {
   const phoneNumbers = [
     {
       label: "Ventas",
-      number: "+57 31 0459 jpg 5889",
-      whatsapp: "5215512345678",
+      number: "+57 310 459 5889",
+      whatsapp: "3104595889",
     },
     {
       label: "Atención al Cliente",
-      number: "+52 55 8765 4321",
-      whatsapp: "5215587654321",
+      number: "+57 311 657 7337",
+      whatsapp: "3116577337",
     },
   ]
 

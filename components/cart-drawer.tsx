@@ -109,7 +109,7 @@ export function CartDrawer({
                         </button>
                       </div>
                       <p className="text-sm text-muted-foreground mt-1">
-                        €{item.price} cada uno
+                        ${item.price.toFixed(3)} cada uno
                       </p>
 
                       {/* Quantity Controls */}
@@ -132,7 +132,7 @@ export function CartDrawer({
                           </button>
                         </div>
                         <span className="font-semibold">
-                          €{(item.price * item.quantity).toFixed(2)}
+                          ${ (item.price * item.quantity).toFixed(3) }
                         </span>
                       </div>
                     </div>
@@ -150,14 +150,14 @@ export function CartDrawer({
                 <div className="mb-6">
                   <div className="flex justify-between text-sm mb-2">
                     <span className="text-muted-foreground">
-                      Añade €{(75 - subtotal).toFixed(2)} más para envío gratis
+                      Añade ${ (75.000 - subtotal).toFixed(3) } más para envío gratis
                     </span>
                     <Sparkles className="w-4 h-4 text-gold" />
                   </div>
                   <div className="h-2 bg-secondary rounded-full overflow-hidden">
                     <div
                       className="h-full bg-gradient-to-r from-gold to-gold-shimmer rounded-full transition-all duration-500"
-                      style={{ width: `${Math.min((subtotal / 75) * 100, 100)}%` }}
+                      style={{ width: `${Math.min((subtotal / 75.000) * 100, 100)}%` }}
                     />
                   </div>
                 </div>
@@ -167,17 +167,17 @@ export function CartDrawer({
               <div className="space-y-3 mb-6">
                 <div className="flex justify-between text-sm">
                   <span className="text-muted-foreground">Subtotal</span>
-                  <span>€{subtotal.toFixed(2)}</span>
+                  <span>${subtotal.toFixed(3)}</span>
                 </div>
                 <div className="flex justify-between text-sm">
                   <span className="text-muted-foreground">Envío</span>
                   <span className={shipping === 0 ? "text-accent" : ""}>
-                    {shipping === 0 ? "Gratis" : `€${shipping.toFixed(2)}`}
+                    {shipping === 0 ? "Gratis" : `$${shipping.toFixed(3)}`}
                   </span>
                 </div>
                 <div className="flex justify-between text-lg font-semibold pt-3 border-t border-border">
                   <span>Total</span>
-                  <span className="text-gold-gradient">€{total.toFixed(2)}</span>
+                  <span className="text-gold-gradient">${total.toFixed(3)}</span>
                 </div>
               </div>
 

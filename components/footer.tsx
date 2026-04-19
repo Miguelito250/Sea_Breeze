@@ -7,30 +7,25 @@ import { useState } from "react"
 
 const footerLinks = {
   productos: [
-    { label: "Rostro", href: "#" },
-    { label: "Cuerpo", href: "#" },
-    { label: "Cabello", href: "#" },
-    { label: "Sets de Regalo", href: "#" },
+    { label: "Bronceadores", href: "#productos" },
+    { label: "Aceites", href: "#productos" },
+    { label: "Mantequillas", href: "#productos" },
   ],
   empresa: [
-    { label: "Nuestra Historia", href: "#nosotros" },
-    { label: "Sostenibilidad", href: "#" },
-    { label: "Blog", href: "#" },
-    { label: "Trabaja con Nosotros", href: "#" },
+    { label: "Beneficios", href: "#beneficios" },
+    { label: "Vitaminas", href: "#beneficios" }
   ],
   ayuda: [
-    { label: "Contacto", href: "#" },
-    { label: "FAQ", href: "#" },
-    { label: "Envíos", href: "#" },
-    { label: "Devoluciones", href: "#" },
+    { label: "Contacto", href: "#nosotros" },
+    { label: "FAQ", href: "#nosotros" },
+    { label: "Envíos", href: "#nosotros" },
+    { label: "Devoluciones", href: "#nosotros" },
   ],
 }
 
 const socialLinks = [
   { icon: Instagram, href: "#", label: "Instagram" },
   { icon: Facebook, href: "#", label: "Facebook" },
-  { icon: Twitter, href: "#", label: "Twitter" },
-  { icon: Youtube, href: "#", label: "Youtube" },
 ]
 
 export function Footer() {
@@ -54,7 +49,7 @@ export function Footer() {
             <div>
               <h3 className="text-3xl md:text-4xl font-light mb-4">
                 Únete a la familia{" "}
-                <span className="italic text-gold">CocoLuxe</span>
+                <span className="italic text-gold">Sea Breeze</span>
               </h3>
               <p className="text-background/60 text-lg">
                 Recibe ofertas exclusivas, consejos de belleza y acceso anticipado a nuevos productos.
@@ -105,9 +100,8 @@ export function Footer() {
           {/* Brand Column */}
           <div className="col-span-2 md:col-span-4 lg:col-span-1 lg:pr-8">
             <Link href="/" className="inline-flex items-center gap-2 mb-6">
-              <span className="text-2xl">🥥</span>
+              <span className="text-2xl"><img className="w-full h-full rounded-full" src="/logo_sea.webp" alt="Sea Breeze Logo" /></span>
               <span className="text-2xl font-semibold">
-                Coco<span className="text-gold">Luxe</span>
               </span>
             </Link>
             <p className="text-background/60 text-sm leading-relaxed mb-6">
@@ -182,7 +176,7 @@ export function Footer() {
         {/* Bottom Bar */}
         <div className="mt-16 pt-8 border-t border-background/10 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-sm text-background/40">
-            © 2024 CocoLuxe. Todos los derechos reservados.
+            © {new Date().getFullYear()} Sea Breeze. Todos los derechos reservados.
           </p>
           
           <div className="flex flex-wrap items-center justify-center gap-6 text-sm text-background/40">

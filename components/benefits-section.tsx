@@ -155,7 +155,7 @@ export function BenefitsSection() {
                 <div className="relative">
                   <div className="w-32 h-32 rounded-full bg-gradient-to-b from-gold/40 to-gold/10 animate-gold-glow" />
                   <div className="absolute inset-0 flex items-center justify-center">
-                    <span className="text-6xl animate-float">🥥</span>
+                    <span className="text-6xl animate-float"><img className="w-full h-full rounded-full" src="/logo_sea.webp" alt="Sea Breeze Logo" /></span>
                   </div>
                 </div>
               </div>

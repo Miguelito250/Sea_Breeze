@@ -21,7 +21,7 @@ const products: Product[] = [
     id: 1,
     name: "Bronceador facial radiante",
     description: "Elixir nutritivo con oro de 24k y aceite de coco virgen",
-    price: 89,
+    price: 60.000,
     category: "rostro",
     rating: 5,
     isNew: true,
@@ -30,7 +30,7 @@ const products: Product[] = [
     id: 2,
     name: "Aceite corporal",
     description: "Hidratación profunda con manteca de coco y vainilla",
-    price: 54,
+    price: 70.000,
     category: "cuerpo",
     rating: 4.8,
     isBestseller: true,
@@ -39,7 +39,7 @@ const products: Product[] = [
     id: 3,
     name: "Mantequilla corporal",
     description: "Regeneración celular mientras descansas",
-    price: 120,
+    price: 80.000,
     category: "rostro",
     rating: 4.9,
   },
@@ -84,7 +84,7 @@ export function ProductsSection({ onAddToCart }: ProductsSectionProps) {
         </div>
 
         {/* Filters */}
-        <div className="flex justify-center gap-2 mb-12 flex-wrap">
+        {/* <div className="flex justify-center gap-2 mb-12 flex-wrap">
           {categories.map((category) => (
             <button
               key={category}
@@ -99,7 +99,7 @@ export function ProductsSection({ onAddToCart }: ProductsSectionProps) {
               {category}
             </button>
           ))}
-        </div>
+        </div> */}
 
         {/* Products Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -196,13 +196,13 @@ export function ProductsSection({ onAddToCart }: ProductsSectionProps) {
                   {/* Price & Add to Cart */}
                   <div className="flex items-center justify-between mt-auto pt-4 border-t border-border/50">
                     <span className="text-2xl font-light">
-                      €{product.price}
+                      ${product.price.toFixed(3)}
                     </span>
                     
                     <Button
                       size="sm"
                       onClick={() => onAddToCart(product)}
-                      className="group/btn relative overflow-hidden bg-foreground text-background hover:bg-foreground/90 rounded-full px-4"
+                      className="group/btn relative overflow-hidden bg-foreground text-background hover:bg-foreground/90 rounded-full px-4 cursor-pointer"
                     >
                       <Plus className="w-4 h-4 mr-1" />
                       <span>Añadir</span>
@@ -222,7 +222,7 @@ export function ProductsSection({ onAddToCart }: ProductsSectionProps) {
             size="lg"
             className="rounded-full px-10 py-6 text-base tracking-wide border-foreground/20 hover:border-gold hover:text-gold transition-all duration-300"
           >
-            Ver todos los productos
+            Pronto vendrán más productos ❤️
           </Button>
         </div>
       </div>

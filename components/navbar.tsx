@@ -44,17 +44,19 @@ export function Navbar({ cartCount, onCartClick }: NavbarProps) {
           href="/" 
           className="group flex items-center gap-3"
         >
+
           <div className="relative w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center overflow-hidden">
-            <span className="text-2xl">🥥</span>
+            <span className="text-2xl"><img className="w-full h-full rounded-full" src="/logo_sea.webp" alt="Sea Breeze Logo" /></span>
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-gold/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 animate-shimmer" />
           </div>
           <span className="text-2xl font-semibold tracking-wide text-foreground">
-            Coco<span className="text-gold-gradient">Luxe</span>
+            Sea <span className="text-gold-gradient">Breeze</span>
           </span>
         </Link>
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-10">
+          
           {navLinks.map((link) => (
             <Link
               key={link.href}
@@ -71,7 +73,7 @@ export function Navbar({ cartCount, onCartClick }: NavbarProps) {
         <div className="flex items-center gap-4">
           <button
             onClick={onCartClick}
-            className="relative p-2 rounded-full hover:bg-secondary/50 transition-colors duration-300 group"
+            className="relative p-2 rounded-full hover:bg-secondary/50 transition-colors duration-300 group cursor-pointer"
           >
             <ShoppingBag className="w-5 h-5 text-foreground group-hover:text-primary transition-colors" />
             {cartCount > 0 && (
