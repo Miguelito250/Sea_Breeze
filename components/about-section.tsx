@@ -71,12 +71,12 @@ export function AboutSection() {
       name: "Instagram",
       handle: "@cocoluxe.beauty",
       icon: InstagramIcon,
-      url: "https://instagram.com/cocoluxe.beauty",
+      url: "https://www.instagram.com/seabreezeglow?igsh=d21qM2I1OGdnZTZx",
       color: "from-pink-500 to-purple-600",
     },
     {
       name: "TikTok",
-      handle: "@cocoluxe.oficial",
+      handle: "@seabreezeglow@gmail.com",
       icon: TikTokIcon,
       url: "https://tiktok.com/@cocoluxe.oficial",
       color: "from-gray-800 to-gray-900",
@@ -236,10 +236,10 @@ export function AboutSection() {
                 Déjanos tu número y te llamamos en menos de 24 horas
               </p>
               <a
-                href="mailto:hola@cocoluxe.com"
+                href="mailto:seabreezeglow@gmail.com"
                 className="inline-flex items-center gap-2 text-gold hover:underline"
               >
-                hola@cocoluxe.com
+                seabreezeglow@gmail.com
                 <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M5 12h14M12 5l7 7-7 7" />
                 </svg>
