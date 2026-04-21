@@ -124,44 +124,78 @@ export function BenefitsSection() {
         <div className="mt-20 relative overflow-hidden rounded-3xl glass p-10 md:p-16">
           <div className="relative z-10 grid md:grid-cols-2 gap-10 items-center">
             <div>
-              <h3 className="text-3xl md:text-4xl font-light mb-6">
-                Del coco a tu piel,{" "}
-                <span className="italic text-gold-gradient">sin intermediarios</span>
-              </h3>
-              <p className="text-muted-foreground text-lg leading-relaxed mb-6">
-                Trabajamos directamente con agricultores locales en regiones tropicales, 
-                asegurando la máxima frescura y calidad en cada gota de aceite. 
-                Nuestro proceso de extracción preserva todos los nutrientes esenciales.
-              </p>
-              <div className="flex flex-wrap gap-6">
-                <div>
-                  <span className="block text-4xl font-light text-gold-gradient">48h</span>
-                  <span className="text-sm text-muted-foreground">Del cultivo al producto</span>
-                </div>
-                <div>
-                  <span className="block text-4xl font-light text-gold-gradient">15°C</span>
-                  <span className="text-sm text-muted-foreground">Prensado en frío</span>
-                </div>
-                <div>
-                  <span className="block text-4xl font-light text-gold-gradient">3x</span>
-                  <span className="text-sm text-muted-foreground">Más nutrientes</span>
-                </div>
-              </div>
-            </div>
+  <h3 className="text-3xl md:text-4xl font-light mb-6">
+    Del coco a tu piel,{" "}
+    <span className="italic text-gold-gradient">sin intermediarios</span>
+  </h3>
+
+  <p className="text-muted-foreground text-lg leading-relaxed mb-10">
+    En Sea Breeze elaboramos nuestros productos a partir de ingredientes naturales cuidadosamente seleccionados, como el aceite de coco, conocido por sus propiedades hidratantes y nutritivas. <br />
+    Nuestro proceso es artesanal, buscando conservar al máximo los beneficios de cada ingrediente y ofreciendo productos frescos, seguros y amigables con la piel. <br />
+    Creemos en lo natural, en lo simple y en el cuidado consciente del cuerpo, por eso evitamos químicos agresivos y priorizamos la calidad en cada fórmula.
+  </p>
+
+  {/* Features premium */}
+  <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+  
+  <div className="rounded-xl p-5 text-center border border-gold/20 bg-white/80 backdrop-blur-md shadow-md gold-hover">
+    <span className="block text-lg font-light text-gold-gradient mb-1">
+      Ingredientes naturales
+    </span>
+    {/* <span className="text-sm text-muted-foreground">
+      Pureza desde el origen
+    </span> */}
+  </div>
+
+  <div className="rounded-xl p-5 text-center border border-gold/20 bg-white/80 backdrop-blur-md shadow-md gold-hover">
+    <span className="block text-lg font-light text-gold-gradient mb-1">
+      Elaboración artesanal
+    </span>
+    {/* <span className="text-sm text-muted-foreground">
+      Cuidado en cada detalle
+    </span> */}
+  </div>
+
+  <div className="rounded-xl p-5 text-center border border-gold/20 bg-white/80 backdrop-blur-md shadow-md gold-hover">
+    <span className="block text-lg font-light text-gold-gradient mb-1">
+      Libre de químicos agresivos
+    </span>
+    {/* <span className="text-sm text-muted-foreground">
+      Suave con tu piel
+    </span> */}
+  </div>
+
+</div>
+</div>
             
             {/* Visual */}
-            <div className="relative h-80 md:h-96 rounded-2xl bg-gradient-to-br from-secondary via-card to-secondary overflow-hidden">
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="relative">
-                  <div className="w-32 h-32 rounded-full bg-gradient-to-b from-gold/40 to-gold/10 animate-gold-glow" />
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <span className="text-6xl animate-float"><img className="w-full h-full rounded-full" src="/logo_sea.webp" alt="Sea Breeze Logo" /></span>
-                  </div>
+            <div className="relative h-80 md:h-96 rounded-2xl bg-gradient-to-br from-secondary via-card to-secondary overflow-visible">
+              
+              {/* Imagen */}
+              <div className="absolute inset-0 rounded-md">
+                <img 
+                  src="/woman.webp" 
+                  alt="" 
+                  className="w-full h-full object-cover rounded-md"
+                />
+              </div>
+
+              {/* Logo sobresalido */}
+              <div className="absolute top-0 right-0 translate-x-1/2 -translate-y-1/3 z-50">
+                <div className="w-28 h-28 rounded-full flex items-center justify-center">
+                  
+                  {/* Glow interno opcional */}
+                  <div className="absolute inset-0 rounded-full bg-gradient-to-b from-gold/30 to-transparent blur-md opacity-60"></div>
+
+                  {/* Logo */}
+                  <img 
+                    src="/logo_sea.webp" 
+                    alt="Sea Breeze Logo"
+                    className="w-24 h-24 rounded-full object-cover animate-float relative z-10"
+                  />
                 </div>
               </div>
-              {/* Floating leaves */}
-              <div className="absolute top-10 left-10 text-4xl animate-float opacity-40">🌿</div>
-              <div className="absolute bottom-10 right-10 text-3xl animate-float-delayed opacity-30">🍃</div>
+
             </div>
           </div>
 
