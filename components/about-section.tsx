@@ -78,7 +78,7 @@ export function AboutSection() {
       name: "TikTok",
       handle: "@seabreezeglow",
       icon: TikTokIcon,
-      url: "https://tiktok.com/@seabreezeglow",
+      url: "https://tiktok.com/",
       color: "from-gray-800 to-gray-900",
     },
   ]
