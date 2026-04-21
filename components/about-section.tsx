@@ -69,16 +69,16 @@ export function AboutSection() {
   const socialLinks = [
     {
       name: "Instagram",
-      handle: "@cocoluxe.beauty",
+      handle: "@seabreezeglow",
       icon: InstagramIcon,
       url: "https://www.instagram.com/seabreezeglow?igsh=d21qM2I1OGdnZTZx",
       color: "from-pink-500 to-purple-600",
     },
     {
       name: "TikTok",
-      handle: "@seabreezeglow@gmail.com",
+      handle: "@seabreezeglow",
       icon: TikTokIcon,
-      url: "https://tiktok.com/@cocoluxe.oficial",
+      url: "https://tiktok.com/@seabreezeglow",
       color: "from-gray-800 to-gray-900",
     },
   ]
