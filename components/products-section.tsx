@@ -1,5 +1,6 @@
 "use client"
 
+import Image from "next/image"
 import { useState } from "react"
 import { Plus, Star, Heart } from "lucide-react"
 import { Button } from "@/components/ui/button"
@@ -12,6 +13,7 @@ interface Product {
   price: number
   category: string
   rating: number
+  image?: string
   isNew?: boolean
   isBestseller?: boolean
 }
@@ -20,44 +22,54 @@ const products: Product[] = [
   {
     id: 1,
     name: "Bronceador corporal natural",
-    description: "Bronceador corporal natural que realza el tono de la piel mientras la hidrata, logrando un acabado uniforme, luminoso y no grasoso.",
-    price: 60.000,
+    description:
+      "Bronceador corporal natural que realza el tono de la piel mientras la hidrata, logrando un acabado uniforme, luminoso y no grasoso.",
+    price: 60.0,
     category: "cuerpo",
     rating: 5,
+    image: "/Bronceador.webp",
     isNew: true,
   },
   {
     id: 2,
     name: "Aceite corporal",
-    description: "Aceite corporal 100% natural que hidrata profundamente la piel, dejándola suave y nutrida. Elaborado con aceite de coco y esencias naturales que aportan un aroma agradable y duradero.",
-    price: 70.000,
+    description:
+      "Aceite corporal 100% natural que hidrata profundamente la piel, dejándola suave y nutrida. Elaborado con aceite de coco y esencias naturales que aportan un aroma agradable y duradero.",
+    price: 70.0,
     category: "cuerpo",
     rating: 4.8,
+    image: "/Aceite.webp",
     isBestseller: true,
   },
   {
     id: 3,
     name: "Mantequilla corporal",
-    description: "Mantequilla corporal de textura cremosa que nutre intensamente la piel seca, ayudando a mejorar su suavidad y apariencia. Ideal para uso diario, especialmente en zonas resecas.",
-    price: 80.000,
+    description:
+      "Mantequilla corporal de textura cremosa que nutre intensamente la piel seca, ayudando a mejorar su suavidad y apariencia. Ideal para uso diario, especialmente en zonas resecas.",
+    price: 80.0,
     category: "cuerpo",
     rating: 4.9,
+    image: "/Mantequilla.webp",
   },
   {
     id: 4,
     name: "Kit esencial de viaje",
-    description: "Kit práctico con productos naturales en tamaño ideal para llevar a cualquier lugar. Incluye bronceador corporal, aceite hidratante y mantequilla corporal, diseñados para mantener la piel suave, nutrida y con un tono luminoso.",
-    price: 80.000,
+    description:
+      "Kit práctico con productos naturales en tamaño ideal para llevar a cualquier lugar. Incluye bronceador corporal, aceite hidratante y mantequilla corporal, diseñados para mantener la piel suave, nutrida y con un tono luminoso.",
+    price: 80.0,
     category: "cuerpo",
     rating: 4.9,
+    image: "/Kit.webp",
   },
   {
     id: 5,
     name: "Cepillo aplicador corporal",
-    description: "Cepillo diseñado para facilitar la aplicación de aceites y bronceadores en la piel, permitiendo una distribución más uniforme del producto. Sus cerdas suaves ayudan a esparcir sin dejar exceso y mejoran la experiencia de uso.",
-    price: 80.000,
+    description:
+      "Cepillo diseñado para facilitar la aplicación de aceites y bronceadores en la piel, permitiendo una distribución más uniforme del producto. Sus cerdas suaves ayudan a esparcir sin dejar exceso y mejoran la experiencia de uso.",
+    price: 80.0,
     category: "cuerpo",
     rating: 4.9,
+    image: "/Cepillo.webp",
   },
 ]
 
@@ -72,41 +84,40 @@ export function ProductsSection({ onAddToCart }: ProductsSectionProps) {
   const [hoveredId, setHoveredId] = useState<number | null>(null)
   const [favorites, setFavorites] = useState<number[]>([])
 
-  const filteredProducts = activeCategory === "todos" 
-    ? products 
-    : products.filter(p => p.category === activeCategory)
+  const filteredProducts =
+    activeCategory === "todos"
+      ? products
+      : products.filter((p) => p.category === activeCategory)
 
   const toggleFavorite = (id: number) => {
-    setFavorites(prev => 
-      prev.includes(id) ? prev.filter(fid => fid !== id) : [...prev, id]
+    setFavorites((prev) =>
+      prev.includes(id) ? prev.filter((fid) => fid !== id) : [...prev, id]
     )
   }
 
   return (
-    <section id="productos" className="py-24 md:py-32 bg-background">
-      <div className="max-w-7xl mx-auto px-6">
-        {/* Header */}
-        <div className="text-center mb-16">
-          <span className="inline-block text-sm font-medium tracking-widest uppercase text-gold mb-4">
+    <section id="productos" className="bg-background py-24 md:py-32">
+      <div className="mx-auto max-w-7xl px-6">
+        <div className="mb-16 text-center">
+          <span className="mb-4 inline-block text-sm font-medium uppercase tracking-widest text-gold">
             Colección
           </span>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-light mb-6">
+          <h2 className="mb-6 text-4xl font-light md:text-5xl lg:text-6xl">
             Sea <span className="italic text-gold-gradient">Breeze</span>
           </h2>
-          <p className="text-muted-foreground max-w-xl mx-auto text-lg leading-relaxed">
-            Cada producto es una experiencia sensorial única, creada con los ingredientes 
-            más puros del trópico.
+          <p className="mx-auto max-w-xl text-lg leading-relaxed text-muted-foreground">
+            Cada producto es una experiencia sensorial única, creada con los
+            ingredientes más puros del trópico.
           </p>
         </div>
 
-        {/* Filters */}
-        {/* <div className="flex justify-center gap-2 mb-12 flex-wrap">
+        {/* <div className="mb-12 flex flex-wrap justify-center gap-2">
           {categories.map((category) => (
             <button
               key={category}
               onClick={() => setActiveCategory(category)}
               className={cn(
-                "px-6 py-2 rounded-full text-sm font-medium tracking-wider uppercase transition-all duration-300",
+                "rounded-full px-6 py-2 text-sm font-medium uppercase tracking-wider transition-all duration-300",
                 activeCategory === category
                   ? "bg-primary text-primary-foreground"
                   : "bg-secondary/50 text-foreground/70 hover:bg-secondary hover:text-foreground"
@@ -117,8 +128,7 @@ export function ProductsSection({ onAddToCart }: ProductsSectionProps) {
           ))}
         </div> */}
 
-        {/* Products Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
           {filteredProducts.map((product, index) => (
             <div
               key={product.id}
@@ -127,102 +137,109 @@ export function ProductsSection({ onAddToCart }: ProductsSectionProps) {
               onMouseEnter={() => setHoveredId(product.id)}
               onMouseLeave={() => setHoveredId(null)}
             >
-              {/* Card */}
-              <div className="relative overflow-hidden rounded-2xl glass gold-hover p-6 h-full flex flex-col">
-                {/* Badges */}
-                <div className="absolute top-4 left-4 flex gap-2 z-10">
+              <div className="relative flex h-full flex-col overflow-hidden rounded-2xl glass gold-hover p-6">
+                <div className="absolute left-4 top-4 z-10 flex gap-2">
                   {product.isNew && (
-                    <span className="px-3 py-1 bg-accent text-accent-foreground text-xs font-medium rounded-full">
+                    <span className="rounded-full bg-accent px-3 py-1 text-xs font-medium text-accent-foreground">
                       Nuevo
                     </span>
                   )}
                   {product.isBestseller && (
-                    <span className="px-3 py-1 bg-gold/20 text-foreground text-xs font-medium rounded-full">
+                    <span className="rounded-full bg-gold/20 px-3 py-1 text-xs font-medium text-foreground">
                       Más vendido
                     </span>
                   )}
                 </div>
 
-                {/* Favorite Button */}
                 <button
                   onClick={() => toggleFavorite(product.id)}
-                  className="absolute top-4 right-4 z-10 p-2 rounded-full bg-card/80 hover:bg-card transition-colors"
+                  className="absolute right-4 top-4 z-10 rounded-full bg-card/80 p-2 transition-colors hover:bg-card"
                 >
-                  <Heart 
+                  <Heart
                     className={cn(
-                      "w-4 h-4 transition-colors",
-                      favorites.includes(product.id) 
-                        ? "fill-primary text-primary" 
+                      "h-4 w-4 transition-colors",
+                      favorites.includes(product.id)
+                        ? "fill-primary text-primary"
                         : "text-foreground/50"
-                    )} 
+                    )}
                   />
                 </button>
 
-                {/* Product Image Placeholder */}
-                <div className="relative aspect-square mb-6 rounded-xl bg-gradient-to-br from-secondary via-card to-secondary overflow-hidden">
-                  {/* Shimmer effect on hover */}
-                  <div 
+                <div className="relative mb-6 aspect-square overflow-hidden rounded-xl bg-gradient-to-br from-secondary via-card to-secondary">
+                  <div
                     className={cn(
-                      "absolute inset-0 bg-gradient-to-r from-transparent via-gold/20 to-transparent transition-transform duration-700",
-                      hoveredId === product.id ? "translate-x-full" : "-translate-x-full"
+                      "absolute inset-0 z-[1] bg-gradient-to-r from-transparent via-gold/20 to-transparent transition-transform duration-700",
+                      hoveredId === product.id
+                        ? "translate-x-full"
+                        : "-translate-x-full"
                     )}
                   />
-                  
-                  {/* Product visual */}
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="relative">
-                      <div className="w-24 h-32 rounded-2xl bg-gradient-to-b from-gold/30 to-gold/10 transform group-hover:scale-110 transition-transform duration-500" />
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <span className="text-4xl transform group-hover:rotate-12 transition-transform duration-500">
-                          {product.category === "rostro" ? "✨" : product.category === "cuerpo" ? "🌿" : "💫"}
-                        </span>
+
+                  {product.image ? (
+                    <Image
+                      src={product.image}
+                      alt={product.name}
+                      fill
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    />
+                  ) : (
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="relative">
+                        <div className="h-32 w-24 rounded-2xl bg-gradient-to-b from-gold/30 to-gold/10 transition-transform duration-500 group-hover:scale-110" />
+                        <div className="absolute inset-0 flex items-center justify-center">
+                          <span className="text-4xl transition-transform duration-500 group-hover:rotate-12">
+                            {product.category === "rostro"
+                              ? "✨"
+                              : product.category === "cuerpo"
+                                ? "🌿"
+                                : "💫"}
+                          </span>
+                        </div>
                       </div>
                     </div>
-                  </div>
+                  )}
                 </div>
 
-                {/* Product Info */}
-                <div className="flex-1 flex flex-col">
-                  {/* Rating */}
-                  <div className="flex items-center gap-1 mb-2">
+                <div className="flex flex-1 flex-col">
+                  <div className="mb-2 flex items-center gap-1">
                     {[...Array(5)].map((_, i) => (
                       <Star
                         key={i}
                         className={cn(
-                          "w-3 h-3",
-                          i < Math.floor(product.rating) 
-                            ? "fill-gold text-gold" 
+                          "h-3 w-3",
+                          i < Math.floor(product.rating)
+                            ? "fill-gold text-gold"
                             : "text-border"
                         )}
                       />
                     ))}
-                    <span className="text-xs text-muted-foreground ml-1">
+                    <span className="ml-1 text-xs text-muted-foreground">
                       ({product.rating})
                     </span>
                   </div>
 
-                  <h3 className="text-xl font-semibold mb-2 group-hover:text-gold-gradient transition-all duration-300">
+                  <h3 className="mb-2 text-xl font-semibold transition-all duration-300 group-hover:text-gold-gradient">
                     {product.name}
                   </h3>
-                  
-                  <p className="text-sm text-muted-foreground mb-4 flex-1 leading-relaxed">
+
+                  <p className="mb-4 flex-1 text-sm leading-relaxed text-muted-foreground">
                     {product.description}
                   </p>
 
-                  {/* Price & Add to Cart */}
-                  <div className="flex items-center justify-between mt-auto pt-4 border-t border-border/50">
+                  <div className="mt-auto flex items-center justify-between border-t border-border/50 pt-4">
                     <span className="text-2xl font-light">
                       ${product.price.toFixed(3)}
                     </span>
-                    
+
                     <Button
                       size="sm"
                       onClick={() => onAddToCart(product)}
-                      className="group/btn relative overflow-hidden bg-foreground text-background hover:bg-foreground/90 rounded-full px-4 cursor-pointer"
+                      className="group/btn relative cursor-pointer overflow-hidden rounded-full bg-foreground px-4 text-background hover:bg-foreground/90"
                     >
-                      <Plus className="w-4 h-4 mr-1" />
+                      <Plus className="mr-1 h-4 w-4" />
                       <span>Añadir</span>
-                      <div className="absolute inset-0 bg-gradient-to-r from-gold/0 via-gold/30 to-gold/0 translate-x-[-200%] group-hover/btn:translate-x-[200%] transition-transform duration-700" />
+                      <div className="absolute inset-0 translate-x-[-200%] bg-gradient-to-r from-gold/0 via-gold/30 to-gold/0 transition-transform duration-700 group-hover/btn:translate-x-[200%]" />
                     </Button>
                   </div>
                 </div>
@@ -231,12 +248,11 @@ export function ProductsSection({ onAddToCart }: ProductsSectionProps) {
           ))}
         </div>
 
-        {/* View All Button */}
-        <div className="text-center mt-16">
+        <div className="mt-16 text-center">
           <Button
             variant="outline"
             size="lg"
-            className="rounded-full px-10 py-6 text-base tracking-wide border-foreground/20 hover:border-gold hover:text-gold transition-all duration-300"
+            className="rounded-full border-foreground/20 px-10 py-6 text-base tracking-wide transition-all duration-300 hover:border-gold hover:text-gold"
           >
             Pronto vendrán más productos ❤️
           </Button>
