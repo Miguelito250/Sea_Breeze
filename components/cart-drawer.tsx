@@ -1,5 +1,6 @@
 "use client"
 
+import Image from "next/image"
 import { X, Plus, Minus, ShoppingBag, Sparkles } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
@@ -15,14 +16,16 @@ interface CartDrawerProps {
   items: CartItem[]
   onUpdateQuantity: (id: number, quantity: number) => void
   onRemoveItem: (id: number) => void
+  onCheckoutClick: () => void
 }
 
-export function CartDrawer({ 
-  isOpen, 
-  onClose, 
-  items, 
-  onUpdateQuantity, 
-  onRemoveItem 
+export function CartDrawer({
+  isOpen,
+  onClose,
+  items,
+  onUpdateQuantity,
+  onRemoveItem,
+  onCheckoutClick,
 }: CartDrawerProps) {
   const subtotal = items.reduce((sum, item) => sum + item.price * item.quantity, 0)
   const shipping = subtotal > 75 ? 0 : 5.99
@@ -91,10 +94,20 @@ export function CartDrawer({
                     style={{ animationDelay: `${index * 100}ms` }}
                   >
                     {/* Product Image */}
-                    <div className="w-20 h-20 rounded-xl bg-gradient-to-br from-secondary to-card flex items-center justify-center flex-shrink-0">
-                      <span className="text-2xl">
-                        {item.category === "rostro" ? "✨" : item.category === "cuerpo" ? "🌿" : "💫"}
-                      </span>
+                    <div className="relative w-20 h-20 rounded-xl bg-gradient-to-br from-secondary to-card flex items-center justify-center flex-shrink-0 overflow-hidden">
+                      {item.image ? (
+                        <Image
+                          src={item.image}
+                          alt={item.name}
+                          fill
+                          className="object-cover"
+                          sizes="80px"
+                        />
+                      ) : (
+                        <span className="text-2xl">
+                          {item.category === "rostro" ? "✨" : item.category === "cuerpo" ? "🌿" : "💫"}
+                        </span>
+                      )}
                     </div>
 
                     {/* Product Info */}
@@ -184,6 +197,7 @@ export function CartDrawer({
               {/* Checkout Button */}
               <Button
                 size="lg"
+                onClick={onCheckoutClick}
                 className="w-full group relative overflow-hidden bg-foreground text-background hover:bg-foreground/90 rounded-full py-6 text-base font-medium"
               >
                 <span className="relative z-10">Finalizar Compra</span>

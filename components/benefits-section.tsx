@@ -174,7 +174,7 @@ export function BenefitsSection() {
               {/* Imagen */}
               <div className="absolute inset-0 rounded-md">
                 <img 
-                  src="/woman.webp" 
+                  src="/Modelo.webp" 
                   alt="" 
                   className="w-full h-full object-cover rounded-md"
                 />

@@ -24,7 +24,7 @@ const products: Product[] = [
     name: "Bronceador corporal natural",
     description:
       "Bronceador corporal natural que realza el tono de la piel mientras la hidrata, logrando un acabado uniforme, luminoso y no grasoso.",
-    price: 60.0,
+    price: 40.0,
     category: "cuerpo",
     rating: 5,
     image: "/Bronceador.webp",
@@ -35,7 +35,7 @@ const products: Product[] = [
     name: "Aceite corporal",
     description:
       "Aceite corporal 100% natural que hidrata profundamente la piel, dejándola suave y nutrida. Elaborado con aceite de coco y esencias naturales que aportan un aroma agradable y duradero.",
-    price: 70.0,
+    price: 32.0,
     category: "cuerpo",
     rating: 4.8,
     image: "/Aceite.webp",
@@ -46,7 +46,7 @@ const products: Product[] = [
     name: "Mantequilla corporal",
     description:
       "Mantequilla corporal de textura cremosa que nutre intensamente la piel seca, ayudando a mejorar su suavidad y apariencia. Ideal para uso diario, especialmente en zonas resecas.",
-    price: 80.0,
+    price: 35.0,
     category: "cuerpo",
     rating: 4.9,
     image: "/Mantequilla.webp",
@@ -56,7 +56,7 @@ const products: Product[] = [
     name: "Kit esencial de viaje",
     description:
       "Kit práctico con productos naturales en tamaño ideal para llevar a cualquier lugar. Incluye bronceador corporal, aceite hidratante y mantequilla corporal, diseñados para mantener la piel suave, nutrida y con un tono luminoso.",
-    price: 80.0,
+    price: 85.0,
     category: "cuerpo",
     rating: 4.9,
     image: "/Kit.webp",
@@ -66,7 +66,7 @@ const products: Product[] = [
     name: "Cepillo aplicador corporal",
     description:
       "Cepillo diseñado para facilitar la aplicación de aceites y bronceadores en la piel, permitiendo una distribución más uniforme del producto. Sus cerdas suaves ayudan a esparcir sin dejar exceso y mejoran la experiencia de uso.",
-    price: 80.0,
+    price: 12.0,
     category: "cuerpo",
     rating: 4.9,
     image: "/Cepillo.webp",
