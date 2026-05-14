@@ -22,7 +22,7 @@ const initialCheckoutForm: CheckoutFormData = {
   notes: "",
 }
 
-const whatsappNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER
+const whatsappNumber = "573104595889"
 
 const formatPrice = (value: number) => `$${value.toFixed(3)}`
 
