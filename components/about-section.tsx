@@ -74,13 +74,13 @@ export function AboutSection() {
       url: "https://www.instagram.com/seabreezeglow?igsh=d21qM2I1OGdnZTZx",
       color: "from-pink-500 to-purple-600",
     },
-    {
-      name: "TikTok",
-      handle: "@seabreezeglow",
-      icon: TikTokIcon,
-      url: "https://tiktok.com/",
-      color: "from-gray-800 to-gray-900",
-    },
+    // {
+    //   name: "TikTok",
+    //   handle: "@seabreezeglow",
+    //   icon: TikTokIcon,
+    //   url: "https://tiktok.com/",
+    //   color: "from-gray-800 to-gray-900",
+    // },
   ]
 
   const phoneNumbers = [
